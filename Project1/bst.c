@@ -5,7 +5,7 @@
 
 Node* insert(Node* root, char data)
 {
-    if (!root)
+    if(root == NULL)
     {
         Node* newNode = (Node*)malloc(sizeof(Node));
         newNode->data = data;
@@ -21,10 +21,9 @@ Node* insert(Node* root, char data)
     return root;
 }
 
-
 Node* search(Node* root, char data)
 {
-    if (!root || root->data == data)
+    if (root == NULL || root->data == data)
         return root;
 
     if (data < root->data)
@@ -33,16 +32,15 @@ Node* search(Node* root, char data)
         return search(root->right, data);
 }
 
-// Count nodes
+
 int countNodes(Node* root)
 {
-    if (!root) return 0;
-        
+    if (root == NULL) return 0;
 
     return 1 + countNodes(root->left) + countNodes(root->right);
 }
 
-// Tree height
+
 int treeHeight(Node* root)
 {
     if (root == NULL) return 0; 
@@ -56,7 +54,7 @@ int treeHeight(Node* root)
 
 void inOrder(Node* root)
 {
-    if (!root)
+    if (root != NULL)
     {
         inOrder(root->left);
         printf("%c ", root->data);
