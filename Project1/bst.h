@@ -8,11 +8,11 @@ typedef struct Node {
     struct Node* right;
 } Node;
 
-// Function prototypes
+
 Node* insert(Node* root, char data);
 Node* search(Node* root, char data);
 int countNodes(Node* root);
 int treeHeight(Node* root);
-void inOrder(Node* root); // for sorted output
+void inOrder(Node* root); 
 
 #endif
